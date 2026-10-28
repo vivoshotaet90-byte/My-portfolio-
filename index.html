@@ -2,140 +2,193 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b0d12">
-<meta name="description" content="Портфолио веб-разработчика: Mokka Garden, Kitchen Studio и CINEMAX.">
-<title>My Portfolio | Web Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <title>Моё портфолио | Web-разработка</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#0b0d12;color:#f4f5f7;font-family:Arial,sans-serif}
-main{max-width:1050px;margin:auto;padding:24px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-size:22px;font-weight:800;color:#a6f0c6;letter-spacing:1px}
-a{color:#a6f0c6;text-decoration:none}
-.hero{padding:80px 0 60px}
-.tag{color:#a6f0c6;letter-spacing:2px;font-size:12px;font-weight:bold}
-h1{font-size:clamp(42px,9vw,76px);line-height:1.05;letter-spacing:-2px;margin:18px 0}
-p{color:#b4bbc8;line-height:1.7}
-.hero p{max-width:570px;font-size:18px}
-.button{display:inline-block;margin-top:15px;padding:13px 18px;background:#a6f0c6;color:#101812;border-radius:10px;font-weight:bold}
-section{margin-top:35px}
-h2{font-size:30px;margin:14px 0 22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}
-.card{background:#151922;border:1px solid #292f3b;border-radius:18px;padding:20px;transition:transform .2s,border-color .2s;min-width:0}
-.card:hover{transform:translateY(-4px);border-color:#a6f0c6}
-.preview{height:165px;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:20px;font-size:26px;font-weight:bold;color:white;background:linear-gradient(135deg,#214b3a,#b4d8a7);overflow:hidden}
-.preview small{font-size:11px;letter-spacing:2px;margin-top:10px}
-.kitchen{background:linear-gradient(135deg,#26324c,#8c9fda)}
-.cinema{background:radial-gradient(circle at 78% 20%,#ff4655 0,transparent 25%),linear-gradient(135deg,#08090d,#321016 60%,#a41422)}
-.cinema .eyebrow{font-size:10px;letter-spacing:3px;color:#ff8992;margin-bottom:12px}
-.cinema .cinema-title{font-size:34px;letter-spacing:3px}
-.card h3{font-size:22px;margin:20px 0 8px}
-.card p{font-size:14px;min-height:72px}
-.project-link{display:inline-block;margin-top:10px;padding:11px 14px;border:1px solid #425044;border-radius:9px;font-weight:bold}
-.project-link:hover{background:#a6f0c6;color:#101812}
-.cinema-link{border-color:#7b3038;color:#ff8a93}
-.cinema-link:hover{background:#ff4655;border-color:#ff4655;color:white}
-.skills{display:flex;gap:10px;flex-wrap:wrap}
-.skill{border:1px solid #343b48;padding:9px 13px;border-radius:20px;color:#d5dbe5;font-size:13px}
-footer{margin-top:75px;padding:24px 0;border-top:1px solid #292f3b;color:#8993a3;font-size:13px}
-@media(max-width:500px){
- main{padding:18px}
- .hero{padding:60px 0 45px}
- h1{letter-spacing:-1px}
- nav{gap:12px}
- .logo{font-size:19px}
- .cinema .cinema-title{font-size:30px}
-}
-</style>
+    body {
+      background: #101010;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 65px 20px 45px;
+      text-align: center;
+      background: linear-gradient(145deg, #202020, #101010);
+    }
+
+    header h1 {
+      font-size: clamp(32px, 7vw, 54px);
+      margin-bottom: 12px;
+    }
+
+    header p {
+      color: #bdbdbd;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #a5f3b5;
+      border: 1px solid #387c49;
+      border-radius: 30px;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 1050px;
+      padding: 35px 18px 60px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .project {
+      background: #1b1b1b;
+      border: 1px solid #303030;
+      border-radius: 18px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      min-height: 270px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: #777;
+    }
+
+    .project h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: #c2c2c2;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
+
+    .project a {
+      display: block;
+      text-align: center;
+      background: #f1f1f1;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 15px;
+      border-radius: 10px;
+    }
+
+    .project a:hover {
+      background: #cfcfcf;
+    }
+
+    .cinemax {
+      border-color: #8d2525;
+      background: linear-gradient(145deg, #251616, #1b1b1b);
+    }
+
+    .cinemax a {
+      background: #c92d36;
+      color: white;
+    }
+
+    .cinemax a:hover {
+      background: #e03b45;
+    }
+
+    .about {
+      margin-top: 42px;
+      padding: 25px;
+      border-radius: 16px;
+      background: #1b1b1b;
+      border: 1px solid #303030;
+    }
+
+    .about p {
+      color: #c2c2c2;
+      margin-top: 8px;
+    }
+
+    footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #999;
+      border-top: 1px solid #292929;
+      font-size: 14px;
+    }
+  </style>
 </head>
-
 <body>
-<main>
+  <header>
+    <span class="tag">WEB DEVELOPMENT</span>
+    <h1>Моё портфолио</h1>
+    <p>Создаю современные сайты с адаптивным дизайном и удобным интерфейсом.</p>
+  </header>
 
-<nav>
-  <div class="logo">PORTFOLIO.</div>
-  <a href="#projects">Мои проекты ↓</a>
-</nav>
+  <main>
+    <h2 class="section-title">Мои проекты</h2>
 
-<header class="hero">
-  <div class="tag">WEB DEVELOPMENT · 2026</div>
-  <h1>Создаю сайты.<br>Воплощаю идеи.</h1>
-  <p>Я начинающий веб-разработчик. Создаю современные сайты с адаптивным дизайном, удобным интерфейсом и вниманием к деталям.</p>
-  <a class="button" href="#projects">Смотреть проекты ↘</a>
-</header>
+    <section class="projects">
+      <article class="project">
+        <h3>Mokka Garden</h3>
+        <p>Сайт кафе с меню, корзиной, контактами и информацией для посетителей.</p>
+        <a href="https://vivoshotaet90-byte.github.io/mokka-garden/"
+           target="_blank" rel="noopener noreferrer">
+          Смотреть проект
+        </a>
+      </article>
 
-<section id="projects">
-  <div class="tag">ИЗБРАННЫЕ РАБОТЫ</div>
-  <h2>Мои проекты</h2>
+      <article class="project">
+        <h3>Kitchen Studio</h3>
+        <p>Демонстрационный сайт кухонь на заказ с презентацией мебельных решений.</p>
+        <a href="https://vivoshotaet90-byte.github.io/Kitchen-studio/"
+           target="_blank" rel="noopener noreferrer">
+          Смотреть проект
+        </a>
+      </article>
 
-  <div class="grid">
+      <article class="project cinemax">
+        <h3>CINEMAX</h3>
+        <p>Кинопроект с современным тёмным оформлением и красными акцентами.</p>
+        <a href="https://vivoshotaet90-byte.github.io/Cinemax/"
+           target="_blank" rel="noopener noreferrer">
+          Смотреть CINEMAX
+        </a>
+      </article>
+    </section>
 
-    <article class="card">
-      <div class="preview">
-        Mokka Garden
-        <small>CAFE · MENU · CART</small>
-      </div>
-      <h3>Mokka Garden</h3>
-      <p>Демонстрационный сайт кафе с меню, категориями блюд, корзиной, контактами и адаптивным интерфейсом.</p>
-      <a class="project-link"
-         href="https://vivoshotaet90-byte.github.io/mokka-garden/"
-         target="_blank" rel="noopener noreferrer">
-        Открыть демо ↗
-      </a>
-    </article>
+    <section class="about">
+      <h2>Обо мне</h2>
+      <p>Разрабатываю сайты, работаю над дизайном и функциональностью, адаптирую проекты для смартфонов и компьютеров.</p>
+    </section>
+  </main>
 
-    <article class="card">
-      <div class="preview kitchen">
-        Kitchen Studio
-        <small>KITCHENS · 3D CONFIGURATOR</small>
-      </div>
-      <h3>Kitchen Studio</h3>
-      <p>Современный сайт кухонь с интерактивным 3D-конфигуратором и настройкой дизайна.</p>
-      <a class="project-link"
-         href="https://vivoshotaet90-byte.github.io/Kitchen-studio/"
-         target="_blank" rel="noopener noreferrer">
-        Открыть демо ↗
-      </a>
-    </article>
-
-    <article class="card">
-      <div class="preview cinema">
-        <span class="eyebrow">YOUR NIGHT. YOUR MOVIE.</span>
-        <span class="cinema-title">CINEMAX</span>
-        <small>CINEMA · MOVIES · SEATS</small>
-      </div>
-      <h3>CINEMAX</h3>
-      <p>Концепт сайта кинотеатра в чёрно-красном стиле: афиша фильмов, поиск, расписание сеансов, выбор мест и демонстрация бронирования.</p>
-      <a class="project-link cinema-link"
-         href="https://vivoshotaet90-byte.github.io/Cinemax/"
-         target="_blank" rel="noopener noreferrer">
-        Открыть CINEMAX ↗
-      </a>
-    </article>
-
-  </div>
-</section>
-
-<section>
-  <div class="tag">ТЕХНОЛОГИИ</div>
-  <h2>Мои навыки</h2>
-  <div class="skills">
-    <span class="skill">HTML</span>
-    <span class="skill">CSS</span>
-    <span class="skill">JavaScript</span>
-    <span class="skill">Responsive Design</span>
-    <span class="skill">GitHub Pages</span>
-  </div>
-</section>
-
-<footer>
-  © 2026 My Portfolio · Сделано с интересом к веб-разработке.
-</footer>
-
-</main>
+  <footer>
+    © 2026 · Моё портфолио
+  </footer>
 </body>
 </html>
